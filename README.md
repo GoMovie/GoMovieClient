@@ -1,8 +1,8 @@
 # gomovie-client
 
-> OOA/D final project
-
 ![Build Status](https://travis-ci.org/GoMovie/GoMovieClient.svg?branch=master)
+
+> OOA/D final project
 
 ## Build Setup
 
