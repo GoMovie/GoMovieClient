@@ -5,7 +5,8 @@
     <div class="home-carousel-container">
       <el-carousel
         trigger="click" height="400px">
-        <el-carousel-item v-for="item in 4" :key="item">
+        <el-carousel-item v-for="item in carouselData" :key="item.id">
+          <img :src="item.src" />
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -26,13 +27,28 @@ export default {
   name: 'home',
   data () {
     return {
-      msg: 'Hello Vue, this is home page'
+      msg: 'Hello Vue, this is home page',
+      carouselData: [
+        {
+          id: 1,
+          src: 'http://p0.meituan.net/mmc/cebe963a68101c1fed923b120311625e140541.jpg'
+        }, {
+          id: 2,
+          src: 'http://p0.meituan.net/mmc/41e1094c62f8eaf1f85dec684c9945da146696.jpg'
+        }, {
+          id: 3,
+          src: 'http://p1.meituan.net/mmc/3240add10264fdb0b4bee9e0d12a5f26152982.jpg'
+        }
+      ]
     }
   },
   components: {
     'top-bar': require('../components/top-bar'),
     'home-posters': require('../components/home/home-posters'),
     'home-rank': require('../components/home/home-rank')
+  },
+  mounted: async function () {
+    // let {} = await this.$http.get('/movies')
   }
 }
 </script>
@@ -62,16 +78,9 @@ li {
 .el-carousel__item {
   color: #475669;
   font-size: 18px;
-  opacity: 0.75;
+  background-repeat: no-repeat;
+  background-size: cover;
   line-height: 400px;
   margin: 0;
-}
-
-.el-carousel__item:nth-child(2n) {
-  background-color: #99a9bf;
-}
-
-.el-carousel__item:nth-child(2n+1) {
-  background-color: #d3dce6;
 }
 </style>

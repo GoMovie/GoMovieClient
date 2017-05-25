@@ -15,9 +15,6 @@
         </div>
       </el-col>
     </el-row>
-    <el-pagination class="home-posters__pages"
-      layout="prev, pager, next" :total="50">
-    </el-pagination>
   </div>
 </template>
 
@@ -139,11 +136,17 @@ export default {
 }
 
 .home-posters__movie-title {
-  margin: 0 auto auto auto;
-  width: 160px;
+  font-weight: bold;
+  color: RGBA(0, 0, 0, 0.3);
+  margin: -6px auto auto auto;
+  width: 140px;
+  padding: 10px;
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.1)
+  border-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .home-posters__pages {

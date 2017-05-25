@@ -23,4 +23,7 @@ export default [{
 }, {
   path: '/success',
   component: require('@/pages/success')
+}, {
+  path: '/trade-board',
+  component: require('@/pages/trade-board')
 }]

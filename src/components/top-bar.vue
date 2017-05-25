@@ -10,10 +10,17 @@
           Go Movie
         </div>
       </el-col>
-      <el-col :span="20">
-        <el-menu class="top-bar__menu" mode="horizontal">
-          <el-menu-item class="top-bar__item" v-for='item in items' :index="item.title" key="item.title"><i :class="'el-icon-'+item.icon"></i>{{item.title}}</el-menu-item>
+      <el-col :span="16">
+        <el-menu class="top-bar__menu" mode="horizontal" @select="onSelectMenuBtn">
+          <el-menu-item class="top-bar__item" v-for='item in items'
+            :index="'' + item.id" :key="item.id">{{ item.title }}</el-menu-item>
         </el-menu>
+      </el-col>
+      <el-col :span="4">
+        <el-button class="top-bar__login" type="text" size="large" @click="onLogin"
+          v-show="false">登录</el-button>
+        <el-button class="top-bar__login" type="text" size="large"
+          @click="onRegister">注册</el-button>
       </el-col>
     </el-row>
   </div>
@@ -26,18 +33,36 @@ export default {
     return {
       activeIndex: '',
       items: [{
+        id: 1,
         icon: 'menu',
         title: '首页'
       }, {
+        id: 2,
         icon: 'message',
-        title: '按钮1'
+        title: '一键购票'
       }, {
+        id: 3,
         icon: 'close',
-        title: '按钮2'
+        title: '留言板'
       }]
     }
   },
   methods: {
+    onSelectMenuBtn (index) {
+      let toPages = [
+        '/', '/confirm-order', '/trade-board'
+      ]
+      this.$router.push(toPages[index - 1])
+    },
+    onLogin () {
+      // login
+    },
+    onRegister () {
+      // register
+    },
+    onLogout () {
+      // log out
+    }
   }
 }
 </script>
@@ -75,11 +100,21 @@ export default {
 .top-bar__item {
   line-height: 80px;
   height: 80px;
-  font-size: 18px;
+  font-size: 16px;
+  border-style: none;
 }
 
-.top-bar__item:hover, .top-bar__item.is-active {
+.top-bar__item:hover {
+  color: #20A0FF;
+  border-style: none;
+}
+
+.top-bar__item.is-active {
   background-color: #20A0FF;
   color: #FFFFFF;
+}
+
+.top-bar__login {
+  line-height: 60px;
 }
 </style>
