@@ -41,6 +41,7 @@ npm test
 ├── src/
 │   ├── main.js                 # app entry file
 │   ├── App.vue                 # main app component
+│   ├── lib/                    # useful js modules
 │   ├── components/             # ui components
 │   │   └── ...
 │   ├── pages/                  # routered pages

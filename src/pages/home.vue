@@ -11,17 +11,10 @@
     </div>
     <el-row :gutter="20">
       <el-col :span="16">
-        <div class="home-left" >
-           全部电影
-          <el-pagination class="home-pages"
-            layout="prev, pager, next" :total="50">
-          </el-pagination>
-        </div>
+        <home-posters></home-posters>
       </el-col>
       <el-col :span="8">
-         <div class="home-right">
-           排行榜
-         </div>
+         <home-rank></home-rank>
       </el-col>
     </el-row>
     <h1 class="test-text">{{ msg }}</h1>
@@ -29,8 +22,6 @@
 </template>
 
 <script>
-import TopBar from '../components/top-bar'
-
 export default {
   name: 'home',
   data () {
@@ -39,7 +30,9 @@ export default {
     }
   },
   components: {
-    'top-bar': TopBar
+    'top-bar': require('../components/top-bar'),
+    'home-posters': require('../components/home/home-posters'),
+    'home-rank': require('../components/home/home-rank')
   }
 }
 </script>
@@ -54,16 +47,6 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
-}
-
-.home-left {
-  height: 300px;
-  background-color:  #99a9bf;
-}
-
-.home-right {
-  height: 300px;
-  background-color:  #d3dce6;
 }
 
 .home-pages {
