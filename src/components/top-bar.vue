@@ -1,27 +1,18 @@
 <template>
   <div class="top-bar">
     <el-row class="top-bar__container">
-      <el-col :span=1>
+      <el-col :span='1'>
         <img class="top-bar__logo"
           src="http://oowu6eof3.bkt.clouddn.com/gomovie-logo.png" />
       </el-col>
-      <el-col :span=3>
+      <el-col :span='3'>
         <div class="top-bar__app-name">
           Go Movie
         </div>
       </el-col>
       <el-col :span="20">
-        <el-menu class="top-bar__menu" mode="horizontal"
-          @select="onClickIndex">
-          <el-menu-item class="top-bar__item" index="1">
-            <i class="el-icon-menu"></i>首页
-          </el-menu-item>
-          <el-menu-item class="top-bar__item" index="2">
-            <i class="el-icon-message"></i>btn2
-          </el-menu-item>
-          <el-menu-item class="top-bar__item" index="3">
-            <i class="el-icon-close"></i>btn3
-          </el-menu-item>
+        <el-menu class="top-bar__menu" mode="horizontal">
+          <el-menu-item class="top-bar__item" v-for='item in items' :index="item.title" key="item.title"><i :class="'el-icon-'+item.icon"></i>{{item.title}}</el-menu-item>
         </el-menu>
       </el-col>
     </el-row>
@@ -32,12 +23,21 @@
 export default {
   name: 'top-bar',
   data () {
-    return {}
+    return {
+      activeIndex: '',
+      items: [{
+        icon: 'menu',
+        title: '首页'
+      }, {
+        icon: 'message',
+        title: '按钮1'
+      }, {
+        icon: 'close',
+        title: '按钮2'
+      }]
+    }
   },
   methods: {
-    onClickIndex (index) {
-      // console.log(index)
-    }
   }
 }
 </script>
@@ -78,7 +78,7 @@ export default {
   font-size: 18px;
 }
 
-.top-bar__item:hover {
+.top-bar__item:hover, .top-bar__item.is-active {
   background-color: #20A0FF;
   color: #FFFFFF;
 }
