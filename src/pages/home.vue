@@ -1,7 +1,6 @@
 <!-- home page -->
 <template>
   <div class="home">
-    <top-bar></top-bar>
     <div class="home-carousel-container">
       <el-carousel
         trigger="click" height="400px">
@@ -43,11 +42,11 @@ export default {
     }
   },
   components: {
-    'top-bar': require('../components/top-bar'),
     'home-posters': require('../components/home/home-posters'),
     'home-rank': require('../components/home/home-rank')
   },
   mounted: async function () {
+    // TODO buffer movie info data from the server
     // let {} = await this.$http.get('/movies')
   }
 }

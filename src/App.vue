@@ -1,12 +1,16 @@
 <template>
   <div id="app">
+    <top-bar></top-bar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    'top-bar': require('./components/top-bar')
+  }
 }
 </script>
 

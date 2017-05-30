@@ -1,15 +1,15 @@
 <template>
-  <div class="trade-board">
+  <div class="register-dialog">
     <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'trade-board',
+  name: 'register-dialog',
   data () {
     return {
-      msg: 'Trade board'
+      msg: 'Register Dialog'
     }
   }
 }

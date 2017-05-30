@@ -19,6 +19,12 @@ export default new Vuex.Store({
   mutations: {
     updateMovieInfo: (state, newInfo) => {
       state.movieInfo = newInfo
+    },
+    toggleLoginState: (state) => {
+      state.userInfo.isLogin = !state.userInfo.isLogin
+    },
+    updateLoginState: (state, newLoginState) => {
+      state.userInfo.isLogin = newLoginState
     }
   }
 })

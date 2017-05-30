@@ -5,9 +5,11 @@
     </el-row>
     <el-row class="home-posters__group" :gutter="15"
       v-for="(row, key) in posterData" :key="key">
-      <el-col :span="6"
+      <el-col class="home-posters__ele"
+        :span="6"
         v-for="ele in row" :key="ele.id"
-        v-show="ele.id > 0">
+        v-show="ele.id > 0"
+        @click.native="onPosterClick">
         <img class="home-posters__img"
           :src="ele.imageUrl" />
         <div class="home-posters__movie-title">
@@ -52,6 +54,9 @@ export default {
         handledData.push(handledDataRow)
       }
       return handledData
+    },
+    onPosterClick () {
+      this.$router.push('/movie-info')
     }
   },
   created: function () {
@@ -114,6 +119,10 @@ export default {
 </script>
 
 <style scoped>
+.home-posters__ele {
+  cursor: pointer;
+}
+
 .home-posters {
   margin-left: 10px;
 }
@@ -132,7 +141,6 @@ export default {
 .home-posters__img {
   width: 160px;
   height: 220px;
-  cursor: pointer;
 }
 
 .home-posters__movie-title {

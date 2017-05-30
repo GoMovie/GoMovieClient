@@ -11,14 +11,18 @@
         </div>
       </el-col>
       <el-col :span="16">
-        <el-menu class="top-bar__menu" mode="horizontal" @select="onSelectMenuBtn">
+        <el-menu class="top-bar__menu" mode="horizontal"
+          @select="onSelectMenuBtn"
+          default-active="1">
           <el-menu-item class="top-bar__item" v-for='item in items'
             :index="'' + item.id" :key="item.id">{{ item.title }}</el-menu-item>
         </el-menu>
       </el-col>
       <el-col :span="4">
         <el-button class="top-bar__login" type="text" size="large" @click="onLogin"
-          v-show="false">登录</el-button>
+          v-if="!isLogin">登录</el-button>
+        <el-button class="top-bar__logout" type="text" size="large" @click="onLogout"
+          v-else>注销</el-button>
         <el-button class="top-bar__login" type="text" size="large"
           @click="onRegister">注册</el-button>
       </el-col>
@@ -47,6 +51,12 @@ export default {
       }]
     }
   },
+  computed: {
+    isLogin () {
+      console.log(this.$store.state.userInfo.isLogin)
+      return this.$store.state.userInfo.isLogin
+    }
+  },
   methods: {
     onSelectMenuBtn (index) {
       let toPages = [
@@ -56,12 +66,14 @@ export default {
     },
     onLogin () {
       // login
+      this.$store.commit('toggleLoginState')
     },
     onRegister () {
       // register
     },
     onLogout () {
       // log out
+      this.$store.commit('toggleLoginState')
     }
   }
 }
