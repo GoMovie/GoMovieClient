@@ -3,15 +3,17 @@
     <el-row class="top-bar__container">
       <el-col :span="1">
         <img class="top-bar__logo"
+          @click="onLogoClick"
           src="http://oowu6eof3.bkt.clouddn.com/gomovie-logo.png" />
       </el-col>
       <el-col :span="3">
-        <div class="top-bar__app-name">
+        <div class="top-bar__app-name" @click="onLogoClick">
           Go Movie
         </div>
       </el-col>
       <el-col :span="16">
-        <el-menu class="top-bar__menu" mode="horizontal" default-active="/" :router="true" ref="menu">
+        <el-menu class="top-bar__menu" mode="horizontal" default-active="/"
+          :router="true" ref="menu">
           <el-menu-item class="top-bar__item" v-for='item in items'
             :index="item.url" :key="item.url">{{ item.title }}</el-menu-item>
         </el-menu>
@@ -54,6 +56,9 @@ export default {
   computed: {
     isLogin () {
       return this.$store.state.userInfo.isLogin
+    },
+    isMenuFocus () {
+      return this.$store.state.isMenuFocus
     }
   },
   components: {
@@ -76,12 +81,20 @@ export default {
     },
     inactive () {
       this.$refs.menu.activedIndex = ''
+    },
+    onLogoClick () {
+      this.$refs.menu.activedIndex = '/'
+      this.$router.push('/')
     }
   }
 }
 </script>
 
 <style scoped>
+.top-bar__app-name, .top-bar__logo {
+  cursor: pointer;
+}
+
 .top-bar {
   position: fixed;
   top: 0;

@@ -15,9 +15,13 @@ export default new Vuex.Store({
     movieBuff,  //  TODO replaced by the data provided by server
     userInfo: {
       isLogin: false
-    }
+    },
+    isMenuFocus: true
   },
   mutations: {
+    updateMenuFocus: (state, focus) => {
+      state.isMenuFocus = focus
+    },
     buffMovieInfo: (state, buff) => {
       state.movieBuff = buff
     },

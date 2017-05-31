@@ -4,7 +4,8 @@
       <basic-info :movieIndex="movieIndex"></basic-info>
     </div>
     <div class="movie-info__bottom-part">
-      <div>电影简介</div>
+      <div class="movie-info__des-title">电影简介</div>
+      <hr />
       <div class="movie-info__description">{{ movieDescription }}</div>
     </div>
   </div>
@@ -39,9 +40,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.movie-info__up-part {
+  margin-top: 120px;
+  margin-bottom: 40px;
+}
+
 .movie-info {
   text-align: left;
-  margin-left: 150px;
-  margin-right: 150px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.movie-info__des-title {
+  font-weight: bold;
+  font-size: 24px;
+  color: RGBA(223, 45, 45, 1.00);
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 </style>

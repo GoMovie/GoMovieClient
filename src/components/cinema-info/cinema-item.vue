@@ -4,10 +4,13 @@
       <el-col :span="18" class="cinema-item__info">
         <div class="cinema-item__row">
           <span class="cinema-item__name">{{cinema.name}}</span>
-          <el-rate v-model="cinema.score" disabled show-text text-color="#ff9900" :text-template="rateTemplate" class="cinema-item__score"></el-rate>
+          <el-rate v-model="cinema.score" disabled show-text text-color="#ff9900"
+            :text-template="rateTemplate" class="cinema-item__score"></el-rate>
         </div>
         <div class="cinema-item__row">地址：{{cinema.location}}</div>
-        <div class="cinema-item__row">影讯：<span v-for="time in cinema.times">{{time}} | </span></div>
+        <div class="cinema-item__row">影讯：
+          <span v-for="time in cinema.times">{{time}} | </span>
+        </div>
       </el-col>
       <el-col :span="2" class="cinema-item__price-col">
         <span class="cinema-item__price">¥{{cinema.price}}起</span>
@@ -47,7 +50,7 @@ export default {
   height: 88px;
   margin: 0 20px 20px;
   padding: 10px 20px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid RGBA(0, 0, 0, 0.2);
   font-size: 14px;
 }
 .cinema-item__info {
