@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import config from '../url-config'
+import movieBuff from './movie-buff'
 
 Vue.use(Vuex)
 
@@ -11,14 +12,14 @@ export default new Vuex.Store({
   strict: debug,
   state: {
     baseURL: config.webServerURL,
-    movieInfo: [],
+    movieBuff,  //  TODO replaced by the data provided by server
     userInfo: {
       isLogin: false
     }
   },
   mutations: {
-    updateMovieInfo: (state, newInfo) => {
-      state.movieInfo = newInfo
+    buffMovieInfo: (state, buff) => {
+      state.movieBuff = buff
     },
     toggleLoginState: (state) => {
       state.userInfo.isLogin = !state.userInfo.isLogin

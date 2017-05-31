@@ -1,7 +1,7 @@
 <template>
   <div class="trade-board">
     <el-button type="primary" class="trade-board__button" size="large" @click="dialogVisible = true">我要转让</el-button>
-    <h1 class="trade-board__title">转让版</h1>
+    <h1 class="trade-board__title">转让板</h1>
     <trade-table :trade-data="tradeData"></trade-table>
     <el-dialog title="新建转让" :visible.sync="dialogVisible" size="tiny" @close="resetForm">
       <el-form :model="form" :rules="rules" label-width="80px" ref="form">

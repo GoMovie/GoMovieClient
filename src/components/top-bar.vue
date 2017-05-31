@@ -46,7 +46,7 @@ export default {
         url: '/confirm-order'
       }, {
         icon: 'close',
-        title: '留言板',
+        title: '转让板',
         url: '/trade-board'
       }]
     }
