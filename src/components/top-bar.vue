@@ -11,11 +11,9 @@
         </div>
       </el-col>
       <el-col :span="16">
-        <el-menu class="top-bar__menu" mode="horizontal"
-          @select="onSelectMenuBtn"
-          default-active="1">
+        <el-menu class="top-bar__menu" mode="horizontal" default-active="1" :router="true">
           <el-menu-item class="top-bar__item" v-for='item in items'
-            :index="'' + item.id" :key="item.id">{{ item.title }}</el-menu-item>
+            :index="item.url" :key="item.url">{{ item.title }}</el-menu-item>
         </el-menu>
       </el-col>
       <el-col :span="4">
@@ -39,17 +37,17 @@ export default {
     return {
       activeIndex: '',
       items: [{
-        id: 1,
         icon: 'menu',
-        title: '首页'
+        title: '首页',
+        url: '/'
       }, {
-        id: 2,
         icon: 'message',
-        title: '一键购票'
+        title: '一键购票',
+        url: '/confirm-order'
       }, {
-        id: 3,
         icon: 'close',
-        title: '留言板'
+        title: '留言板',
+        url: '/trade-board'
       }]
     }
   },
@@ -63,12 +61,6 @@ export default {
     'register-dialog': require('../components/home/register-dialog')
   },
   methods: {
-    onSelectMenuBtn (index) {
-      let toPages = [
-        '/', '/confirm-order', '/trade-board'
-      ]
-      this.$router.push(toPages[index - 1])
-    },
     onLogin () {
       // login
       this.$refs.loginDialog.open()
