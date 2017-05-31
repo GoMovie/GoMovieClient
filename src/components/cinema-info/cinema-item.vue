@@ -4,7 +4,7 @@
       <el-col :span="18" class="cinema-item__info">
         <div class="cinema-item__row">
           <span class="cinema-item__name">{{cinema.name}}</span>
-          <el-rate v-model="cinema.score" disabled show-text text-color="#ff9900" text-template="{value}" class="cinema-item__score"></el-rate>
+          <el-rate v-model="cinema.score" disabled show-text text-color="#ff9900" :text-template="rateTemplate" class="cinema-item__score"></el-rate>
         </div>
         <div class="cinema-item__row">地址：{{cinema.location}}</div>
         <div class="cinema-item__row">影讯：<span v-for="time in cinema.times">{{time}} | </span></div>
@@ -31,6 +31,12 @@ export default {
   methods: {
     goSeatInfo: function () {
       this.$router.push('/seat-info')
+    }
+  },
+  computed: {
+    rateTemplate () {
+      let score = this.cinema.score
+      return Number.isInteger(score) ? '{value}.0' : '{value}'
     }
   }
 }

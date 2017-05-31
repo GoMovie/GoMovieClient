@@ -17,25 +17,25 @@ export default {
       film: '加勒比海盗5：死无对证',
       cinemas: [{
         name: '1978电影城',
-        score: '3.0',
+        score: 3.0,
         location: '增城区增江街沿江东三路15号1978创意园B区1号',
         times: ['22:25'],
         price: 33
       }, {
         name: 'CGV星聚汇影城(永旺店)',
-        score: '4.8',
+        score: 4.8,
         location: '番禺区亚运大道1号永旺梦乐城4F',
         times: ['22:50'],
         price: 37
       }, {
         name: 'IDC国际影城(白云尚城店)',
-        score: '5.0',
+        score: 5.0,
         location: '白云区尚景街1号白云尚城文化活动中心',
         times: ['22:05', '22:35', '23:05'],
         price: 42
       }, {
         name: 'SFC上影影城(海珠燕汇店) ',
-        score: '4.6',
+        score: 4.6,
         location: '海珠区江燕路108号燕汇广场4楼',
         times: ['21:50', '22:45'],
         price: 34
