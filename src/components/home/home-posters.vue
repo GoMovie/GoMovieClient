@@ -1,22 +1,15 @@
 <template>
   <div class="home-posters">
-    <el-row class="home-posters__group">
-      <div class="home-posters__title">全部电影 ({{ movieNum }}部)</div>
-    </el-row>
-    <el-row class="home-posters__group" :gutter="15"
-      v-for="(row, key) in posterData" :key="key">
-      <el-col class="home-posters__ele"
-        :span="6"
-        v-for="ele in row" :key="ele.id"
-        v-show="ele.id > 0"
-        @click.native="onPosterClick">
-        <img class="home-posters__img"
-          :src="ele.imageUrl" />
-        <div class="home-posters__movie-title">
-          {{ ele.title }}
+    <div class="home-posters__title">全部电影 ({{ posterData.length }}部)</div>
+    <div class="home-posters__container">
+      <div class="home-posters__poster-container" v-for="poster in posterData" :key="poster.id">
+        <div class="home-posters__poster" @click.native="onPosterClick">
+          <img class="home-posters__img" :src="poster.imageUrl"/><div class="home-posters__overlay">
+            <span class="home-posters__movie-title">{{poster.title}}</span>
+          </div>
         </div>
-      </el-col>
-    </el-row>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,36 +18,10 @@ export default {
   name: 'home-posters',
   data () {
     return {
-      movieNum: 20,
-      posterData: [[]]
+      posterData: []
     }
   },
   methods: {
-    //  convert plain data to structured posterData
-    handlePosterData (rawData) {
-      let handledData = []
-      let handledDataRow = []
-      let counter = 0
-      for (let ele of rawData) {
-        counter += 1
-        handledDataRow.push(ele)
-        if (counter % 4 === 0) {
-          handledData.push(handledDataRow)
-          handledDataRow = []
-        }
-      }
-      let curRowLen = handledDataRow.length
-      if (curRowLen > 0) {
-        for (let i = 0; i < 4 - curRowLen % 4; ++i) {
-          handledDataRow.push({
-            id: -1 - i,  // mark empty
-            imageUrl: ''
-          })
-        }
-        handledData.push(handledDataRow)
-      }
-      return handledData
-    },
     onPosterClick () {
       this.$router.push('/movie-info')
     }
@@ -112,19 +79,43 @@ export default {
         'onShow': true
       }
     ]
-    this.posterData = this.handlePosterData(rawData)
-    // console.log(this.posterData)
+    this.posterData = rawData
   }
 }
 </script>
 
 <style scoped>
-.home-posters__ele {
-  cursor: pointer;
-}
 
 .home-posters {
-  margin-left: 10px;
+  margin: 0 50px;
+}
+
+.home-posters__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home-posters__poster-container {
+  box-sizing: border-box;
+  width: 25%;
+  max-width: 25%;
+  flex: auto;
+  cursor: pointer;
+  padding: 0 20px 30px;
+}
+
+.home-posters__poster {
+  position: relative;
+  height: 220px;
+}
+
+.home-posters__overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABQCAMAAACpg44GAAAAbFBMVEUiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiK2HsfSAAAAJHRSTlPMxr63q6OahzclHRULBgHCsZOOf3p1cGtmYVxXUk1IQz4wLBAszz8hAAAAhklEQVRo3u3OxY0DAAADsBxDmZn337FTVPIjnsAZ4/zgCOcHhzg/+MBlgPOD/zg/+Ifzg3dcbrj84vzgFZcLLmdcTrgccTngssdlh8sWlw0ua1xWuCxxWeDyg/ODc1xmuHzj/OAXzg9+4vzgFJcPnB98x/nBCS5vOD9YVVVVVVVVVVVVr/IEUdzLcLhtP2AAAAAASUVORK5CYII=) repeat-x bottom;
 }
 
 .home-posters__title {
@@ -132,32 +123,27 @@ export default {
   font-size: 24px;
   font-weight: bold;
   margin-left: 20px;
-}
-
-.home-posters__group {
   margin-bottom: 20px;
 }
 
 .home-posters__img {
-  width: 160px;
+  width: 100%;
   height: 220px;
 }
 
 .home-posters__movie-title {
-  font-weight: bold;
-  color: RGBA(0, 0, 0, 0.3);
-  margin: -6px auto auto auto;
-  width: 140px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 22px;
+  width: calc(100% - 20px);
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   padding: 10px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-.home-posters__pages {
-  /*text-align: right;*/
-}
 </style>
