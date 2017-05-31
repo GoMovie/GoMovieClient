@@ -26,6 +26,7 @@ export default {
   methods: {
     onPosterClick (index) {
       this.$router.push(`/movie-info?movieIndex=${index}&movieID=${this.posterData[index].id}`)
+      this.$root.$children[0].$refs.topBar.inactive()
     }
   },
   created: function () {

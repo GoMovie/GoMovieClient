@@ -11,7 +11,7 @@
         </div>
       </el-col>
       <el-col :span="16">
-        <el-menu class="top-bar__menu" mode="horizontal" default-active="1" :router="true">
+        <el-menu class="top-bar__menu" mode="horizontal" default-active="/" :router="true" ref="menu">
           <el-menu-item class="top-bar__item" v-for='item in items'
             :index="item.url" :key="item.url">{{ item.title }}</el-menu-item>
         </el-menu>
@@ -73,6 +73,9 @@ export default {
     onLogout () {
       // log out
       this.$store.commit('toggleLoginState')
+    },
+    inactive () {
+      this.$refs.menu.activedIndex = ''
     }
   }
 }
