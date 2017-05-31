@@ -1,11 +1,11 @@
 <template>
   <div class="top-bar">
     <el-row class="top-bar__container">
-      <el-col :span='1'>
+      <el-col :span="1">
         <img class="top-bar__logo"
           src="http://oowu6eof3.bkt.clouddn.com/gomovie-logo.png" />
       </el-col>
-      <el-col :span='3'>
+      <el-col :span="3">
         <div class="top-bar__app-name">
           Go Movie
         </div>
@@ -27,6 +27,8 @@
           @click="onRegister">注册</el-button>
       </el-col>
     </el-row>
+    <login-dialog ref="loginDialog"></login-dialog>
+    <register-dialog ref="registerDialog"></register-dialog>
   </div>
 </template>
 
@@ -53,9 +55,12 @@ export default {
   },
   computed: {
     isLogin () {
-      console.log(this.$store.state.userInfo.isLogin)
       return this.$store.state.userInfo.isLogin
     }
+  },
+  components: {
+    'login-dialog': require('../components/home/login-dialog'),
+    'register-dialog': require('../components/home/register-dialog')
   },
   methods: {
     onSelectMenuBtn (index) {
@@ -66,10 +71,12 @@ export default {
     },
     onLogin () {
       // login
+      this.$refs.loginDialog.open()
       this.$store.commit('toggleLoginState')
     },
     onRegister () {
       // register
+      this.$refs.registerDialog.open()
     },
     onLogout () {
       // log out

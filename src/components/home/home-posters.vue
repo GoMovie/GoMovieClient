@@ -3,7 +3,7 @@
     <div class="home-posters__title">全部电影 ({{ posterData.length }}部)</div>
     <div class="home-posters__container">
       <div class="home-posters__poster-container" v-for="poster in posterData" :key="poster.id">
-        <div class="home-posters__poster" @click.native="onPosterClick">
+        <div class="home-posters__poster" @click="onPosterClick">
           <img class="home-posters__img" :src="poster.imageUrl"/><div class="home-posters__overlay">
             <span class="home-posters__movie-title">{{poster.title}}</span>
           </div>
@@ -100,13 +100,13 @@ export default {
   width: 25%;
   max-width: 25%;
   flex: auto;
-  cursor: pointer;
   padding: 0 20px 30px;
 }
 
 .home-posters__poster {
   position: relative;
   height: 220px;
+  cursor: pointer;
 }
 
 .home-posters__overlay {

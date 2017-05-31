@@ -27,18 +27,16 @@ export default {
   data () {
     return {
       msg: 'Hello Vue, this is home page',
-      carouselData: [
-        {
-          id: 1,
-          src: 'http://p0.meituan.net/mmc/cebe963a68101c1fed923b120311625e140541.jpg'
-        }, {
-          id: 2,
-          src: 'http://p0.meituan.net/mmc/41e1094c62f8eaf1f85dec684c9945da146696.jpg'
-        }, {
-          id: 3,
-          src: 'http://p1.meituan.net/mmc/3240add10264fdb0b4bee9e0d12a5f26152982.jpg'
-        }
-      ]
+      carouselData: [{
+        id: 1,
+        src: 'http://p0.meituan.net/mmc/cebe963a68101c1fed923b120311625e140541.jpg'
+      }, {
+        id: 2,
+        src: 'http://p0.meituan.net/mmc/41e1094c62f8eaf1f85dec684c9945da146696.jpg'
+      }, {
+        id: 3,
+        src: 'http://p1.meituan.net/mmc/3240add10264fdb0b4bee9e0d12a5f26152982.jpg'
+      }]
     }
   },
   components: {
