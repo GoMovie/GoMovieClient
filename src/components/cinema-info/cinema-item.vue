@@ -1,7 +1,7 @@
 <template>
-  <div class="cinema-item">
+  <div class="cinema-item" :class="addClass">
     <el-row>
-      <el-col :span="18" class="cinema-item__info">
+      <el-col :span="22" class="cinema-item__info">
         <div class="cinema-item__row">
           <span class="cinema-item__name">{{cinema.name}}</span>
           <el-rate v-model="cinema.score" disabled show-text text-color="#ff9900"
@@ -15,9 +15,6 @@
       <el-col :span="2" class="cinema-item__price-col">
         <span class="cinema-item__price">¥{{cinema.price}}起</span>
       </el-col>
-      <el-col :span="4" class="cinema-item__button-col">
-        <el-button type="primary" @click="goSeatInfo">选座购票</el-button>
-      </el-col>
     </el-row>
   </div>
 </template>
@@ -26,21 +23,27 @@
 
 export default {
   name: 'cinema-item',
-  props: ['cinema'],
+  props: ['cinema', 'select'],
   data () {
-    return {
-    }
-  },
-  methods: {
-    goSeatInfo: function () {
-      this.$router.push('/seat-info')
-    }
+    return {}
   },
   computed: {
     rateTemplate () {
       let score = this.cinema.score
       return Number.isInteger(score) ? '{value}.0' : '{value}'
+    },
+    addClass () {
+      return this.select ? 'cinema-item-selected' : ''
     }
+  },
+  methods: {
+    // selectItem () {
+    //   if (this.addClass === '') {
+    //     this.addClass = 'cinema-item-selected'
+    //   } else {
+    //     this.addClass = ''
+    //   }
+    // }
   }
 }
 </script>
@@ -52,6 +55,14 @@ export default {
   padding: 10px 20px;
   border: 1px solid RGBA(0, 0, 0, 0.2);
   font-size: 14px;
+  cursor: pointer;
+}
+.cinema-item-selected {
+  background-color: RGBA(32, 160, 255, 1.00);
+  color: RGBA(255, 255, 255, 1);
+}
+.cinema-item:hover {
+  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
 .cinema-item__info {
   text-align: left;

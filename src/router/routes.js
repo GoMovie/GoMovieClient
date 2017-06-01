@@ -15,9 +15,6 @@ export default [{
   path: '/profile',
   component: require('@/pages/profile')
 }, {
-  path: '/room-and-time',
-  component: require('@/pages/room-and-time')
-}, {
   path: '/seat-info',
   component: require('@/pages/seat-info')
 }, {

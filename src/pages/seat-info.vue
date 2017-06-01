@@ -1,6 +1,12 @@
 <template>
   <div class="seat-info">
-    <h1>{{ msg }}</h1>
+    <el-row>
+      <!-- <el-breadcrumb class="cinema-info__title">
+        <el-breadcrumb-item to="/">{{movieTitle}}</el-breadcrumb-item>
+        <el-breadcrumb-item to="/">{{movieTitle}}</el-breadcrumb-item>
+        <el-breadcrumb-item>选择座位</el-breadcrumb-item>
+      </el-breadcrumb> -->
+    </el-row>
   </div>
 </template>
 
