@@ -13,6 +13,14 @@
 <script>
 export default {
   name: 'seat-info',
+  computed: {
+    pathToMovieInfo: function () {
+
+    },
+    pathToCinemaInfo: function () {
+
+    }
+  },
   data () {
     return {
       msg: 'Choose Seat'

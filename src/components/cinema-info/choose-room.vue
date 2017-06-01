@@ -15,14 +15,15 @@
         <el-col :span="7"><div>放映厅</div></el-col>
         <el-col :span="7"><div>选座购票</div></el-col>
       </el-row>
-      <el-row class="choose-room__screen-item" v-for="item in screenData" :key="item.id">
+      <el-row class="choose-room__screen-item"
+        v-for="item in screenData" :key="item.id">
         <el-col :span="6">
           <div class="choose-room__item-time">{{getTimeStr(item.startTime)}}</div>
         </el-col>
         <el-col :span="4"><div>¥233</div></el-col>
         <el-col :span="7"><div>{{item.hall.name}}</div></el-col>
         <el-col :span="7"><el-button type="primary"
-          @click="goSeatInfo">选座购票</el-button></el-col>
+          @click="goSeatInfo(item.id)">选座购票</el-button></el-col>
       </el-row>
     </div>
   </div>
@@ -32,6 +33,7 @@
 
 export default {
   name: 'choose-room',
+  props: ['movieId', 'cinemaId'],
   data () {
     return {
       screenData: [{
@@ -90,8 +92,10 @@ export default {
       // newDate.setTime(timeStamp)
       return newDate.toLocaleDateString()
     },
-    goSeatInfo: function () {
-      this.$router.push('/seat-info')
+    goSeatInfo: function (screeningId) {
+      //  movieId, cinemaId, screenings
+      let urlStr = `/seat-info?movieId=${this.movieId}&cinemaId=${this.cinemaId}&screeningId=${screeningId}`
+      this.$router.push(urlStr)
     }
   }
 }

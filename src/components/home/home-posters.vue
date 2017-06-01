@@ -27,7 +27,7 @@ export default {
     onPosterClick (index) {
       this.$store.commit('updateMenuFocus', false)
       // this.$store.commit('updateMenuFocus', true)
-      this.$router.push(`/movie-info?movieIndex=${index}&movieID=${this.posterData[index].id}`)
+      this.$router.push(`/movie-info?movieId=${this.posterData[index].id}`)
       this.$root.$children[0].$refs.topBar.inactive()
     }
   },

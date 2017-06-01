@@ -1,7 +1,7 @@
 <template>
   <div class="movie-info">
     <div class="movie-info__up-part">
-      <basic-info :movieIndex="movieIndex"></basic-info>
+      <basic-info :movieId="movieId"></basic-info>
     </div>
     <div class="movie-info__bottom-part">
       <div class="movie-info__des-title">电影简介</div>
@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       msg: 'Movie Info',
-      movieIndex: -1,
+      movieId: -1,
       movieDescription: '这是一个温暖幽默的励志故事。马哈维亚 辛格·珀尕（阿米尔汗 饰）' +
         '曾是印度国家摔跤冠军，因生活所迫放弃摔跤。他希望让儿子可以帮他完成梦想：' +
         '赢得世界级金牌。结果生了四个女儿。' +
@@ -33,12 +33,11 @@ export default {
     'basic-info': require('../components/movie-info/basic-info')
   },
   created () {
-    this.movieIndex = this.$route.query.movieIndex
+    this.movieId = this.$route.query.movieId
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .movie-info__up-part {
   margin-top: 120px;
