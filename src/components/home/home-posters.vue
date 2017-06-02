@@ -20,7 +20,6 @@ export default {
   name: 'home-posters',
   data () {
     return {
-      posterData: []
     }
   },
   methods: {
@@ -31,9 +30,10 @@ export default {
       this.$root.$children[0].$refs.topBar.inactive()
     }
   },
-  created: function () {
-    //  get buffered data from vuex
-    this.posterData = this.$store.state.movieBuff
+  computed: {
+    posterData () {
+      return this.$store.state.movieBuff
+    }
   }
 }
 </script>

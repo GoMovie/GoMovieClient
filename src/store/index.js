@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 import config from '../url-config'
-import movieBuff from './movie-buff'
 
 Vue.use(Vuex)
 
@@ -12,7 +12,7 @@ export default new Vuex.Store({
   strict: debug,
   state: {
     baseURL: config.webServerURL,
-    movieBuff,  //  TODO replaced by the data provided by server
+    movieBuff: [],
     userInfo: {
       isLogin: false
     },
@@ -30,6 +30,12 @@ export default new Vuex.Store({
     },
     updateLoginState: (state, newLoginState) => {
       state.userInfo.isLogin = newLoginState
+    }
+  },
+  actions: {
+    async getMovieInfo ({ commit }) {
+      let {data} = await axios.get('/movies')
+      commit('buffMovieInfo', data)
     }
   }
 })

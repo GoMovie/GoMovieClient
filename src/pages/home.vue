@@ -44,8 +44,9 @@ export default {
     'home-rank': require('../components/home/home-rank')
   },
   mounted: async function () {
-    // TODO buffer movie info data from the server
-    // let {} = await this.$http.get('/movies')
+    console.log('正在取海报数据')
+    await this.$store.dispatch('getMovieInfo')
+    console.log('取海报数据完毕')
   }
 }
 </script>
