@@ -26,15 +26,6 @@ export default {
     addClass () {
       return this.select ? 'cinema-item-selected' : ''
     }
-  },
-  methods: {
-    // selectItem () {
-    //   if (this.addClass === '') {
-    //     this.addClass = 'cinema-item-selected'
-    //   } else {
-    //     this.addClass = ''
-    //   }
-    // }
   }
 }
 </script>
