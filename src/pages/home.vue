@@ -44,9 +44,10 @@ export default {
     'home-rank': require('../components/home/home-rank')
   },
   mounted: async function () {
-    console.log('正在取海报数据')
+    if (this.$store.state.movies.length > 0) return
+    console.log('正在取电影数据')
     await this.$store.dispatch('getMovieInfo')
-    console.log('取海报数据完毕')
+    console.log('取电影数据完毕')
   }
 }
 </script>

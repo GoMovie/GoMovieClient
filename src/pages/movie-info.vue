@@ -1,7 +1,13 @@
 <template>
   <div class="movie-info">
+    <el-row>
+      <el-breadcrumb class="movie-info__title">
+        <el-breadcrumb-item to="/">首页</el-breadcrumb-item>
+        <el-breadcrumb-item> {{movieInfo.title}} </el-breadcrumb-item>
+      </el-breadcrumb>
+    </el-row>
     <div class="movie-info__up-part">
-      <basic-info :movieId="movieId"></basic-info>
+      <basic-info :movieInfo="movieInfo"></basic-info>
     </div>
     <div class="movie-info__bottom-part">
       <div class="movie-info__des-title">电影简介</div>
@@ -16,7 +22,6 @@ export default {
   name: 'movie-info',
   data () {
     return {
-      msg: 'Movie Info',
       movieId: -1,
       movieDescription: '这是一个温暖幽默的励志故事。马哈维亚 辛格·珀尕（阿米尔汗 饰）' +
         '曾是印度国家摔跤冠军，因生活所迫放弃摔跤。他希望让儿子可以帮他完成梦想：' +
@@ -28,19 +33,24 @@ export default {
         '最终赢来了成为榜样激励千千万万女性的机会......'
     }
   },
+  computed: {
+    movieInfo: function () {
+      let movies = this.$store.state.movies
+      return movies.filter((movie) => movie.id === this.movieId)[0]
+    }
+  },
   components: {
     'top-bar': require('../components/top-bar'),
     'basic-info': require('../components/movie-info/basic-info')
   },
   created () {
-    this.movieId = this.$route.query.movieId
+    this.movieId = +this.$route.query.movieId
   }
 }
 </script>
 
 <style scoped>
 .movie-info__up-part {
-  margin-top: 120px;
   margin-bottom: 40px;
 }
 
@@ -56,5 +66,10 @@ export default {
   color: RGBA(223, 45, 45, 1.00);
   margin-top: 20px;
   margin-bottom: 5px;
+}
+
+.movie-info__title {
+  padding: 20px 0;
+  font-size: 24px;
 }
 </style>

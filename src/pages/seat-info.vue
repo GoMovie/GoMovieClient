@@ -2,11 +2,12 @@
   <div class="seat-info">
     <el-row>
       <el-breadcrumb class="seat-info__title">
+        <el-breadcrumb-item to="/">首页</el-breadcrumb-item>
         <el-breadcrumb-item :to="pathToMovieInfo">
-          {{this.bufferedMovieInfo.title}}
+          {{movieInfo.title}}
         </el-breadcrumb-item>
         <el-breadcrumb-item :to="pathToCinemaInfo">
-          金逸影院
+          {{cinemaInfo.name}}
         </el-breadcrumb-item>
         <el-breadcrumb-item>选择座位</el-breadcrumb-item>
       </el-breadcrumb>
@@ -14,12 +15,12 @@
     <el-row :gutter="20">
       <el-col :span="16">
         <div class="seat-info__screen">银幕</div>
-        <div class="seat-info__map-container" :style="ContainerStyle">
+        <div class="seat-info__map-container" :style="containerStyle">
           <dl class="seat-info__seat-row" v-for="row in seatRowNum">
             <dd v-for="col in seatColNum">
               <div class="seat-info__seat-item"
-                :class="{ 'seat-info__seat-item-show': seatMap[row-1][col-1].isEnable,
-                          'seat-info__seat-item-selected': seatMap[row-1][col-1].isSelected }"
+                :class="{ 'seat-info__seat-item-show': seats[row - 1][col - 1].isEnable,
+                          'seat-info__seat-item-selected': selectedSeat && row - 1 === selectedSeat.row && col - 1 === selectedSeat.col }"
                 @click="onSeatClick (row-1, col-1)">
               </div>
             </dd>
@@ -29,12 +30,13 @@
       <el-col :span="8">
         <div class="seat-info__user-info">
           <div class="seat-info__order-info seat-info__order-title">
-            {{this.bufferedMovieInfo.title}}
+            {{this.movieInfo.title}}
           </div>
-          <div class="seat-info__order-info">影院：</div>
-          <div class="seat-info__order-info">影厅：</div>
-          <div class="seat-info__order-info">场次：</div>
-          <div class="seat-info__order-info">座位：您还没有选择座位</div>
+          <div class="seat-info__order-info">影院：{{cinemaInfo.name}}</div>
+          <div class="seat-info__order-info">影厅：{{screeningInfo.hall.name}}</div>
+          <div class="seat-info__order-info">场次：09:30:00</div>
+          <div class="seat-info__order-info" v-if="!selectedSeat">座位：您还没有选择座位</div>
+          <div class="seat-info__order-info" v-else>座位：{{selectedSeat.row + 1}}行{{selectedSeat.col + 1}}列</div>
           <el-button class="seat-info__order-info" type="primary">确认选座</el-button>
         </div>
       </el-col>
@@ -60,12 +62,14 @@ export default {
   },
   data () {
     return {
-      ContainerStyle: {},
-      bufferedMovieInfo: {},
-      bufferedCinemaInfo: {},
-      seatMap: [],
+      containerStyle: {},
+      movieInfo: {},
+      cinemaInfo: {},
+      screeningInfo: {},
+      seats: [],
       seatRowNum: 0,
-      seatColNum: 0
+      seatColNum: 0,
+      selectedSeat: null
     }
   },
   methods: {
@@ -82,34 +86,35 @@ export default {
       for (let i = 0; i <= maxRow; ++i) {
         let row = []
         for (let j = 0; j <= maxCol; ++j) {
-          row.push({isEnable: false, isSelected: false})
+          row.push({isEnable: false})
         }
-        this.seatMap.push(row)
+        this.seats.push(row)
       }
       for (let item of seatData) {
-        this.seatMap[item.row][item.col].isEnable = true
+        this.seats[item.row][item.col].isEnable = true
       }
     },
     onSeatClick: function (row, col) {
-      console.log(`row=${row} col=${col}`)
-      let seat = this.seatMap[row][col]
+      // console.log(`row=${row} col=${col}`)
+      let seat = this.seats[row][col]
       // console.log(seat)
       if (!seat.isEnable) {
         return
       }
-      seat.isSelected = !seat.isSelected
+      if (!this.selectedSeat || this.selectedSeat.row !== row || this.selectedSeat.col !== col) {
+        this.selectedSeat = {row, col}
+      } else {
+        this.selectedSeat = null
+      }
     }
   },
   created: function () {
     this.initSeatMap()
-    for (let item of this.$store.state.movieBuff) {
-      let movieId = this.$route.query.movieId
-      if (Number(item.id) === Number(movieId)) {
-        this.bufferedMovieInfo = item
-        break
-      }
-    }
-    this.ContainerStyle = {
+    let {movieId, cinemaId, screeningId} = this.$route.query
+    this.movieInfo = this.$store.state.movies.filter((movie) => +movieId === movie.id)[0]
+    this.cinemaInfo = this.$store.state.cinemas.filter((cinema) => +cinemaId === cinema.id)[0]
+    this.screeningInfo = this.$store.state.screenings.filter((screening) => +screeningId === screening.id)[0]
+    this.containerStyle = {
       width: this.seatColNum * 35 + 'px'
     }
   }

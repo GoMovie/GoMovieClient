@@ -5,7 +5,7 @@
       <div class="basic-info__title">{{movieInfo.title}}</div>
       <!-- <div class="basic-info__title-en">{{movieInfo.originalTitle}}</div> -->
       <div class="basic-info__genres">类型：{{movieInfo.genres}}</div>
-      <div class="basic-info__detail" v-if="movieInfo.onShow">评分：{{movieInfo.rating}}</div>
+      <div class="basic-info__detail" v-if="movieInfo.onShow && movieInfo.rating > 0">评分：{{movieInfo.rating}}</div>
       <el-button class="basic-info__buy-btn"
         @click="onBuyTicket"
         type="primary">立即购票</el-button>
@@ -16,26 +16,15 @@
 <script>
 export default {
   name: 'basic-info',
-  props: ['movieId'],
+  props: ['movieInfo'],
   data () {
     return {
-      movieInfo: {}
     }
   },
   methods: {
     onBuyTicket () {
-      this.$router.push(`/cinema-info?movieId=${this.movieId}`)
+      this.$router.push(`/cinema-info?movieId=${this.movieInfo.id}`)
     }
-  },
-  created () {
-    for (let item of this.$store.state.movieBuff) {
-      if (Number(item.id) === Number(this.movieId)) {
-        this.movieInfo = item
-        break
-      }
-    }
-    // this.movieInfo = this.$store.state.movieBuff[this.movieIndex]
-    //  TODO get movie detail from the server
   }
 }
 </script>

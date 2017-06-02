@@ -20,7 +20,7 @@
         <el-col :span="6">
           <div class="choose-room__item-time">{{getTimeStr(item.startTime)}}</div>
         </el-col>
-        <el-col :span="4"><div>¥233</div></el-col>
+        <el-col :span="4"><div>¥35</div></el-col>
         <el-col :span="7"><div>{{item.hall.name}}</div></el-col>
         <el-col :span="7"><el-button type="primary"
           @click="goSeatInfo(item.id)">选座购票</el-button></el-col>
@@ -36,49 +36,18 @@ export default {
   props: ['movieId', 'cinemaId'],
   data () {
     return {
-      screenData: [{
-        'id': 21,
-        'startTime': 1470187800000,
-        'runningTime': 120,
-        'movie': {
-          'id': 6311303,
-          'title': '加勒比海盗5：死无对证',
-          'originalTitle': 'Pirates of the Caribbean: Dead Men Tell No Tales',
-          'rating': 7.4,
-          'genres': '动作,奇幻,冒险',
-          'imageUrl': 'http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2459723975.jpg',
-          'onShow': true
-        },
-        'hall': {
-          'id': 1,
-          'name': '3D影厅',
-          'description': null
-        }
-      }, {
-        'id': 22,
-        'startTime': 1470187800000,
-        'runningTime': 120,
-        'movie': {
-          'id': 6311303,
-          'title': '加勒比海盗5：死无对证',
-          'originalTitle': 'Pirates of the Caribbean: Dead Men Tell No Tales',
-          'rating': 7.4,
-          'genres': '动作,奇幻,冒险',
-          'imageUrl': 'http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2459723975.jpg',
-          'onShow': true
-        },
-        'hall': {
-          'id': 3,
-          'name': '2D影厅',
-          'description': null
-        }
-      }],
       dateValue: '',
       pickerOptions: {
         disabledDate (time) {
           return time.getTime() < Date.now() - 8.64e7
         }
       }
+    }
+  },
+  computed: {
+    screenData: function () {
+      let screenings = this.$store.state.screenings
+      return screenings.filter((screen) => screen.movie.id === this.movieId)
     }
   },
   methods: {

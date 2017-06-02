@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     posterData () {
-      return this.$store.state.movieBuff
+      return this.$store.state.movies
     }
   }
 }

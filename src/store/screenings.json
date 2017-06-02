@@ -1,0 +1,1085 @@
+[
+  {
+    "id": 1,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 1578714,
+      "title": "神奇女侠",
+      "originalTitle": "Wonder Woman",
+      "rating": 8.1,
+      "genres": "动作,奇幻,冒险",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2460006593.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 21,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 6311303,
+      "title": "加勒比海盗5：死无对证",
+      "originalTitle": "Pirates of the Caribbean: Dead Men Tell No Tales",
+      "rating": 7.4,
+      "genres": "动作,奇幻,冒险",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2459723975.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 22,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 6311303,
+      "title": "加勒比海盗5：死无对证",
+      "originalTitle": "Pirates of the Caribbean: Dead Men Tell No Tales",
+      "rating": 7.4,
+      "genres": "动作,奇幻,冒险",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2459723975.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 28,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 19899718,
+      "title": "蓝精灵：寻找神秘村",
+      "originalTitle": "Smurfs: The Lost Village",
+      "rating": 6.5,
+      "genres": "喜剧,动画,奇幻",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2443742358.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 38,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 20645019,
+      "title": "霸王别姬(京剧)",
+      "originalTitle": "霸王别姬(京剧)",
+      "rating": 9.1,
+      "genres": "戏曲",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2185203187.jpg",
+      "onShow": false
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 39,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 20645019,
+      "title": "霸王别姬(京剧)",
+      "originalTitle": "霸王别姬(京剧)",
+      "rating": 9.1,
+      "genres": "戏曲",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2185203187.jpg",
+      "onShow": false
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 40,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 20645019,
+      "title": "霸王别姬(京剧)",
+      "originalTitle": "霸王别姬(京剧)",
+      "rating": 9.1,
+      "genres": "戏曲",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2185203187.jpg",
+      "onShow": false
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 52,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 24714697,
+      "title": "银河守卫队",
+      "originalTitle": "Ratchet and Clank",
+      "rating": 5.7,
+      "genres": "喜剧,动作,科幻",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2460138911.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 59,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 25864124,
+      "title": "亚瑟王：斗兽争霸",
+      "originalTitle": "King Arthur: Legend of the Sword",
+      "rating": 7.5,
+      "genres": "动作,奇幻,冒险",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2453433569.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 60,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 25864124,
+      "title": "亚瑟王：斗兽争霸",
+      "originalTitle": "King Arthur: Legend of the Sword",
+      "rating": 7.5,
+      "genres": "动作,奇幻,冒险",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2453433569.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 78,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 25937854,
+      "title": "银河护卫队2",
+      "originalTitle": "Guardians of the Galaxy Vol. 2",
+      "rating": 8.2,
+      "genres": "动作,科幻,冒险",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2455261804.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 79,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 25937854,
+      "title": "银河护卫队2",
+      "originalTitle": "Guardians of the Galaxy Vol. 2",
+      "rating": 8.2,
+      "genres": "动作,科幻,冒险",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2455261804.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 87,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26260853,
+      "title": "速度与激情8",
+      "originalTitle": "The Fate of the Furious",
+      "rating": 7.2,
+      "genres": "动作,犯罪",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2444256500.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 88,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26260853,
+      "title": "速度与激情8",
+      "originalTitle": "The Fate of the Furious",
+      "rating": 7.2,
+      "genres": "动作,犯罪",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2444256500.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 89,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26260853,
+      "title": "速度与激情8",
+      "originalTitle": "The Fate of the Furious",
+      "rating": 7.2,
+      "genres": "动作,犯罪",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2444256500.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 97,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26279202,
+      "title": "“吃吃”的爱",
+      "originalTitle": "“吃吃”的爱",
+      "rating": 6.2,
+      "genres": "喜剧,爱情,奇幻",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2459199108.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 106,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26287783,
+      "title": "不期而遇",
+      "originalTitle": "不期而遇",
+      "rating": 4.2,
+      "genres": "喜剧,爱情",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2458370286.jpg",
+      "onShow": false
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 112,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26323026,
+      "title": "临时演员",
+      "originalTitle": "临时演员",
+      "rating": 3.3,
+      "genres": "喜剧,爱情",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2454788953.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 113,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26323026,
+      "title": "临时演员",
+      "originalTitle": "临时演员",
+      "rating": 3.3,
+      "genres": "喜剧,爱情",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2454788953.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 122,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26382962,
+      "title": "美好的意外",
+      "originalTitle": "美好的意外",
+      "rating": 0,
+      "genres": "喜剧,奇幻",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2457127046.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 130,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26385746,
+      "title": "荡寇风云",
+      "originalTitle": "荡寇风云",
+      "rating": 6.3,
+      "genres": "传记,动作,历史",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2459663581.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 139,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26387939,
+      "title": "摔跤吧！爸爸",
+      "originalTitle": "Dangal",
+      "rating": 9.2,
+      "genres": "剧情,传记,运动",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2457983084.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 148,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26421039,
+      "title": "穆桂英挂帅",
+      "originalTitle": "穆桂英挂帅",
+      "rating": 0,
+      "genres": "戏曲",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2456564275.jpg",
+      "onShow": false
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 149,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26421039,
+      "title": "穆桂英挂帅",
+      "originalTitle": "穆桂英挂帅",
+      "rating": 0,
+      "genres": "戏曲",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2456564275.jpg",
+      "onShow": false
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 158,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26589957,
+      "title": "守护者：世纪战元",
+      "originalTitle": "Защитники",
+      "rating": 4,
+      "genres": "动作,科幻",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2459069346.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 159,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26589957,
+      "title": "守护者：世纪战元",
+      "originalTitle": "Защитники",
+      "rating": 4,
+      "genres": "动作,科幻",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2459069346.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 165,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26639958,
+      "title": "春娇救志明",
+      "originalTitle": "春嬌救志明",
+      "rating": 7.5,
+      "genres": "剧情,喜剧,爱情",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2456056900.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 166,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26639958,
+      "title": "春娇救志明",
+      "originalTitle": "春嬌救志明",
+      "rating": 7.5,
+      "genres": "剧情,喜剧,爱情",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2456056900.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 173,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26677981,
+      "title": "夏天19岁的肖像",
+      "originalTitle": "夏天19岁的肖像",
+      "rating": 5.2,
+      "genres": "爱情,悬疑",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2455837220.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 174,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26677981,
+      "title": "夏天19岁的肖像",
+      "originalTitle": "夏天19岁的肖像",
+      "rating": 5.2,
+      "genres": "爱情,悬疑",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2455837220.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 175,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26677981,
+      "title": "夏天19岁的肖像",
+      "originalTitle": "夏天19岁的肖像",
+      "rating": 5.2,
+      "genres": "爱情,悬疑",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2455837220.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 182,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26718838,
+      "title": "异星觉醒",
+      "originalTitle": "Life",
+      "rating": 6.6,
+      "genres": "科幻,惊悚,恐怖",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2456571580.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 183,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26718838,
+      "title": "异星觉醒",
+      "originalTitle": "Life",
+      "rating": 6.6,
+      "genres": "科幻,惊悚,恐怖",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2456571580.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 190,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26748673,
+      "title": "拆弹专家",
+      "originalTitle": "拆弹专家",
+      "rating": 6.7,
+      "genres": "动作,犯罪,悬疑",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2454868217.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 191,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26748673,
+      "title": "拆弹专家",
+      "originalTitle": "拆弹专家",
+      "rating": 6.7,
+      "genres": "动作,犯罪,悬疑",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2454868217.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 192,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26748673,
+      "title": "拆弹专家",
+      "originalTitle": "拆弹专家",
+      "rating": 6.7,
+      "genres": "动作,犯罪,悬疑",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2454868217.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 202,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26776117,
+      "title": "和田玉传奇",
+      "originalTitle": "和田玉传奇",
+      "rating": 0,
+      "genres": "剧情",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2337039677.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 203,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26776117,
+      "title": "和田玉传奇",
+      "originalTitle": "和田玉传奇",
+      "rating": 0,
+      "genres": "剧情",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2337039677.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 213,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26779288,
+      "title": "美容针",
+      "originalTitle": "美容针",
+      "rating": 3.7,
+      "genres": "喜剧,爱情",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2459576413.jpg",
+      "onShow": false
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 226,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26808466,
+      "title": "提着心吊着胆",
+      "originalTitle": "提着心吊着胆",
+      "rating": 6.9,
+      "genres": "剧情,喜剧,犯罪",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2456976809.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 242,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26820394,
+      "title": "功夫小兔侠",
+      "originalTitle": "功夫小兔侠",
+      "rating": 0,
+      "genres": "喜剧,动画",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2459562685.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 253,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26839466,
+      "title": "哆啦A梦：大雄的南极冰冰凉大冒险",
+      "originalTitle": "ドラえもん のび太の南極カチコチ大冒険",
+      "rating": 6.6,
+      "genres": "动画,冒险",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2459600525.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 254,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26839466,
+      "title": "哆啦A梦：大雄的南极冰冰凉大冒险",
+      "originalTitle": "ドラえもん のび太の南極カチコチ大冒険",
+      "rating": 6.6,
+      "genres": "动画,冒险",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2459600525.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 261,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26877237,
+      "title": "29+1",
+      "originalTitle": "29+1",
+      "rating": 7.4,
+      "genres": "剧情",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2458020487.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 274,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26882327,
+      "title": "血狼犬",
+      "originalTitle": "血狼犬",
+      "rating": 6,
+      "genres": "剧情,动作,冒险",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2452142083.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 275,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26882327,
+      "title": "血狼犬",
+      "originalTitle": "血狼犬",
+      "rating": 6,
+      "genres": "剧情,动作,冒险",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2452142083.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 284,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26907450,
+      "title": "麻烦家族",
+      "originalTitle": "麻烦家族",
+      "rating": 4.8,
+      "genres": "剧情,喜剧,家庭",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2457986350.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 298,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 26956641,
+      "title": "小情书",
+      "originalTitle": "小情书",
+      "rating": 5.8,
+      "genres": "剧情,爱情",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2458061295.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 309,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 27003544,
+      "title": "黑白照相馆",
+      "originalTitle": "黑白照相馆",
+      "rating": 0,
+      "genres": "喜剧",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2460165218.jpg",
+      "onShow": false
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 317,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 27005365,
+      "title": "谢瑶环",
+      "originalTitle": "谢瑶环",
+      "rating": 0,
+      "genres": "戏曲",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2456564071.jpg",
+      "onShow": false
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 332,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 27030855,
+      "title": "我的爸爸是国王",
+      "originalTitle": "我的爸爸是国王",
+      "rating": 0,
+      "genres": "喜剧,动画,奇幻",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2460135107.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 333,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 27030855,
+      "title": "我的爸爸是国王",
+      "originalTitle": "我的爸爸是国王",
+      "rating": 0,
+      "genres": "喜剧,动画,奇幻",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2460135107.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 334,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 27030855,
+      "title": "我的爸爸是国王",
+      "originalTitle": "我的爸爸是国王",
+      "rating": 0,
+      "genres": "喜剧,动画,奇幻",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2460135107.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 343,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 27031469,
+      "title": "20:16",
+      "originalTitle": "20:16",
+      "rating": 5.7,
+      "genres": "剧情",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2458941089.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 1,
+      "name": "3D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 344,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 27031469,
+      "title": "20:16",
+      "originalTitle": "20:16",
+      "rating": 5.7,
+      "genres": "剧情",
+      "imageUrl": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2458941089.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 353,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 27034884,
+      "title": "红军小学",
+      "originalTitle": "红军小学",
+      "rating": 0,
+      "genres": "剧情,历史",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2457725152.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 2,
+      "name": "巨幕影厅",
+      "description": null
+    }
+  },
+  {
+    "id": 365,
+    "startTime": 1470187800000,
+    "runningTime": 120,
+    "movie": {
+      "id": 27038491,
+      "title": "诡异酒楼",
+      "originalTitle": "诡异酒楼",
+      "rating": 2,
+      "genres": "惊悚",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2460012780.jpg",
+      "onShow": true
+    },
+    "hall": {
+      "id": 3,
+      "name": "2D影厅",
+      "description": null
+    }
+  }
+]

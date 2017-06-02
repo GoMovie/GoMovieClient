@@ -2,6 +2,7 @@
   <div class="cinema-info">
     <el-row>
       <el-breadcrumb class="cinema-info__title">
+        <el-breadcrumb-item to="/">首页</el-breadcrumb-item>
         <el-breadcrumb-item :to="goBackPath">{{movieTitle}}</el-breadcrumb-item>
         <el-breadcrumb-item>选择电影院</el-breadcrumb-item>
       </el-breadcrumb>
@@ -32,18 +33,7 @@ export default {
     return {
       bufferedMovieInfo: {},
       curSelectCinema: 0,
-      film: '加勒比海盗5：死无对证',
-      cinemas: [{
-        'id': 1,
-        'cityId': '020',
-        'name': '金逸珠江国际影城（大学城店）',
-        'introduction': '2D、3D、4D电影一应俱全。',
-        'address': '番禺区小谷围街贝岗中二横路1号GOGO新天地商业广场B2B001铺',
-        'phone': '020-25830163',
-        'score': 3.0,
-        'longitude': 113.39204391090281,
-        'latitude': 23.10196456776333
-      }]
+      film: '加勒比海盗5：死无对证'
     }
   },
   components: {
@@ -51,6 +41,9 @@ export default {
     'choose-room': require('../components/cinema-info/choose-room')
   },
   computed: {
+    cinemas: function () {
+      return this.$store.state.cinemas
+    },
     movieTitle: function () {
       return this.bufferedMovieInfo.title
     },
@@ -60,7 +53,7 @@ export default {
     },
     curMovieId: function () {
       let movieId = this.$route.query.movieId
-      return movieId
+      return +movieId
     },
     curSelectCinemaId: function () {
       return this.cinemas[this.curSelectCinema].id
@@ -72,7 +65,7 @@ export default {
     }
   },
   created: function () {
-    for (let item of this.$store.state.movieBuff) {
+    for (let item of this.$store.state.movies) {
       let movieId = this.$route.query.movieId
       if (Number(item.id) === Number(movieId)) {
         this.bufferedMovieInfo = item

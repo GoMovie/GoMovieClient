@@ -1,12 +1,12 @@
 <template>
   <div class="cinema-item" :class="addClass">
     <div class="cinema-item__row">
-      <span class="cinema-item__name">{{cinema.name}}</span>
-      <el-rate v-model="cinema.score" disabled show-text text-color="#ff9900"
+      <span class="cinema-item__name">{{fixedCinema.name}}</span>
+      <el-rate v-model="fixedCinema.score" disabled show-text text-color="#ff9900"
         :text-template="rateTemplate" class="cinema-item__score"></el-rate>
     </div>
-    <div class="cinema-item__row">简介：{{cinema.introduction}}</div>
-    <div class="cinema-item__row">地址：{{cinema.address}}</div>
+    <div class="cinema-item__row">简介：{{fixedCinema.introduction}}</div>
+    <div class="cinema-item__row">地址：{{fixedCinema.address}}</div>
   </div>
 </template>
 
@@ -19,6 +19,11 @@ export default {
     return {}
   },
   computed: {
+    fixedCinema () {
+      let newCinema = Object.assign({}, this.cinema)
+      newCinema.score = +newCinema.score.toFixed(1)
+      return newCinema
+    },
     rateTemplate () {
       let score = this.cinema.score
       return Number.isInteger(score) ? '{value}.0' : '{value}'
