@@ -1,8 +1,8 @@
 # gomovie-client
 
-> OOA/D final project
-
 ![Build Status](https://travis-ci.org/GoMovie/GoMovieClient.svg?branch=master)
+
+> OOA/D final project
 
 ## Build Setup
 
@@ -40,10 +40,15 @@ npm test
 │   └── ...
 ├── src/
 │   ├── main.js                 # app entry file
+│   ├── url-config.js           # server info
 │   ├── App.vue                 # main app component
+│   ├── lib/                    # useful js modules
 │   ├── components/             # ui components
 │   │   └── ...
 │   ├── pages/                  # routered pages
+│   │   └── ...
+│   ├── store/                  # vuex support
+│   │   ├── index.js
 │   │   └── ...
 │   └── assets/                 # module assets (processed by webpack)
 │       └── ...
