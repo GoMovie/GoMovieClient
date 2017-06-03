@@ -8,13 +8,13 @@
           <img :src="item.src" />
         </el-carousel-item>
       </el-carousel>
-    </div>
-    <el-row :gutter="20">
+    </div> 
+    <el-row :gutter="20" class="fixed-row">
       <el-col :span="16">
         <home-posters></home-posters>
       </el-col>
       <el-col :span="8">
-         <home-rank></home-rank>
+        <home-rank></home-rank>
       </el-col>
     </el-row>
     <h1 class="test-text">{{ msg }}</h1>
@@ -81,5 +81,9 @@ li {
   background-size: cover;
   line-height: 400px;
   margin: 0;
+}
+
+.fixed-row {
+  margin-right: 0 !important;
 }
 </style>

@@ -19,8 +19,9 @@
         </el-menu>
       </el-col>
       <el-col :span="4">
+        <div v-if="userInfo.isLogin" class="top-bar__greeting">你好，{{userInfo.username}}！</div>
         <el-button class="top-bar__login" type="text" size="large" @click="onLogin"
-          v-if="!isLogin">登录</el-button>
+          v-if="!userInfo.isLogin">登录</el-button>
         <el-button class="top-bar__logout" type="text" size="large" @click="onLogout"
           v-else>注销</el-button>
         <el-button class="top-bar__login" type="text" size="large"
@@ -43,10 +44,6 @@ export default {
         title: '首页',
         url: '/'
       }, {
-        icon: 'message',
-        title: '一键购票',
-        url: '/confirm-order'
-      }, {
         icon: 'close',
         title: '转让板',
         url: '/trade-board'
@@ -54,8 +51,8 @@ export default {
     }
   },
   computed: {
-    isLogin () {
-      return this.$store.state.userInfo.isLogin
+    userInfo () {
+      return this.$store.state.userInfo
     },
     isMenuFocus () {
       return this.$store.state.isMenuFocus
@@ -67,17 +64,13 @@ export default {
   },
   methods: {
     onLogin () {
-      // login
       this.$refs.loginDialog.open()
-      this.$store.commit('toggleLoginState')
     },
     onRegister () {
-      // register
       this.$refs.registerDialog.open()
     },
     onLogout () {
-      // log out
-      this.$store.commit('toggleLoginState')
+      this.$store.commit('logout')
     },
     inactive () {
       this.$refs.menu.activedIndex = ''
@@ -139,6 +132,14 @@ export default {
 .top-bar__item.is-active {
   background-color: #20A0FF;
   color: #FFFFFF;
+}
+
+.top-bar__greeting {
+  display: inline-block;
+  margin-right: 20px;
+  line-height: 80px;
+  height: 80px;
+  font-size: 16px;
 }
 
 .top-bar__login {

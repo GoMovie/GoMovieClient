@@ -1,7 +1,7 @@
 <template>
   <div class="home-posters">
     <div class="home-posters__title">全部电影 ({{ posterData.length }}部)</div>
-    <div class="home-posters__container">
+    <div class="home-posters__container" v-loading="posterData.length === 0"  element-loading-text="玩命加载中">
       <div class="home-posters__poster-container"
         v-for="(poster, index) in posterData" :key="poster.id">
         <div class="home-posters__poster" @click="onPosterClick (index)">

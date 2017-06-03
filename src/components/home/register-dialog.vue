@@ -1,35 +1,31 @@
 <template>
   <div class="register-dialog">
-    <el-dialog class="register-dialog__container"
+    <el-dialog
+      class="register-dialog__container"
       :title="dialogTitle"
-      v-model="visible" size="tiny"
+      :visible.sync="visible" size="tiny"
       :modal-append-to-body="false"
-      :show-close="false">
+      @close="resetForm">
       <el-form class="register-dialog__form"
-        :model="form">
-        <el-form-item :required="true" class="register-dialog__input-item">
+        :model="form" :rules="rules" ref="form">
+        <el-form-item :required="true" class="register-dialog__input-item" prop="username">
           <el-input
             class="register-dialog__input"
             v-model="form.username"
             placeholder="用户名"></el-input>
         </el-form-item>
-        <el-form-item :required="true" class="register-dialog__input-item">
+        <el-form-item :required="true" class="register-dialog__input-item" prop="password">
           <el-input
             class="register-dialog__input"
             v-model="form.password"
-            placeholder="用户密码"></el-input>
-        </el-form-item>
-        <el-form-item :required="true" class="register-dialog__input-item">
-          <el-input
-            class="register-dialog__input"
-            v-model="form.repeatPassword"
-            placeholder="确认密码"></el-input>
-        </el-form-item>
-        <el-form-item class="register-dialog__submit-item">
-          <el-button class="register-dialog__submit-btn"
-            type="primary" @click="onSubmit">注册</el-button>
+            placeholder="用户密码"
+            type="password"></el-input>
         </el-form-item>
       </el-form>
+      <div slot="footer">
+        <el-button type="primary" @click="submitForm">立即创建</el-button>
+        <el-button @click="resetForm">重置</el-button>
+      </div>
   </el-dialog>
   </div>
 </template>
@@ -43,8 +39,11 @@ export default {
       visible: false,
       form: {
         username: '',
-        password: '',
-        repeatPassword: ''
+        password: ''
+      },
+      rules: {
+        username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+        password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
       }
     }
   },
@@ -52,8 +51,18 @@ export default {
     open: function () {
       this.visible = true
     },
-    onSubmit: function () {
-      // console.log('submit')
+    submitForm: function () {
+      this.$refs.form.validate((valid) => {
+        if (valid) {
+          this.$store.commit('addUser', Object.assign({}, this.form))
+          this.visible = false
+        } else {
+          return false
+        }
+      })
+    },
+    resetForm () {
+      this.$refs.form.resetFields()
     }
   }
 }
@@ -61,18 +70,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.register-dialog__submit-btn {
-  width: 100%;
-}
-
-.register-dialog__input-item {
-  margin-bottom: 5px;
-}
-
-.register-dialog__submit-item {
-  margin-top: 15px;
-}
-
 .register-dialog__form {
   margin-left: 35px;
   margin-right: 35px;
