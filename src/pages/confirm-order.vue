@@ -12,8 +12,11 @@
       <el-breadcrumb-item>确认订单</el-breadcrumb-item>
     </el-breadcrumb>
     <confirm-item :orderInfo="orderInfo"></confirm-item>
+    
     <el-button class="confirm-order__confirm-btn" type="primary" size="large" icon="check"
-      @click="onConfirm">去支付</el-button>
+      @click="onConfirm" v-if="userInfo.isLogin">去支付</el-button>
+    <el-button class="confirm-order__confirm-btn" type="primary" size="large" icon="check"
+      @click="onConfirm" v-else disabled>请登录后支付</el-button>
     <el-button class="confirm-order__cancel-btn" size="large" icon="close"
       @click="onCancel">取消订单</el-button>
   </div>
@@ -33,6 +36,9 @@ export default {
     }
   },
   computed: {
+    userInfo: function () {
+      return this.$store.state.userInfo
+    },
     pathToMovieInfo: function () {
       let {movieId} = this.$route.query
       return `/movie-info?movieId=${movieId}`
@@ -52,16 +58,22 @@ export default {
   methods: {
     limitStrLen,
     onConfirm: function () {
-      console.log('confirm')
+      this.$store.commit('addOrder', this.orderInfo)
+      this.$alert('你已经支付成功！', '恭喜', {
+        callback: action => {
+          this.$router.push('/')
+        }
+      })
     },
     onCancel: function () {
+      this.$router.push('/')
     },
     generateOrderInfo: function (movieId, cinemaId, screeningId, row, col) {
       this.orderInfo = {
+        id: new Date().getTime(),
         user: {
-          //  TODO replace
-          username: 'hhk',
-          password: 'hhkb'
+          username: this.$store.state.userInfo.username,
+          password: this.$store.state.userInfo.password
         },
         movie: {
           id: movieId,

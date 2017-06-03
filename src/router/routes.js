@@ -12,8 +12,8 @@ export default [{
   path: '/confirm-order',
   component: require('@/pages/confirm-order')
 }, {
-  path: '/profile',
-  component: require('@/pages/profile')
+  path: '/orders',
+  component: require('@/pages/orders')
 }, {
   path: '/seat-info',
   component: require('@/pages/seat-info')

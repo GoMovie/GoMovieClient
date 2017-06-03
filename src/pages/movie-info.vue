@@ -56,6 +56,10 @@ export default {
   margin-bottom: 40px;
 }
 
+.movie-info__bottom-part {
+  margin-bottom: 30px;  
+}
+
 .movie-info {
   text-align: left;
   width: 70%;

@@ -5,6 +5,7 @@ import axios from 'axios'
 // import config from '../url-config'
 import cinemas from './cinemas'
 import screenings from './screenings'
+import orders from './orders'
 
 Vue.use(Vuex)
 
@@ -17,6 +18,7 @@ export default new Vuex.Store({
     movies: [],
     cinemas,
     screenings,
+    orders,
     userInfo: {
       username: '',
       password: '',
@@ -45,6 +47,9 @@ export default new Vuex.Store({
     },
     addUser: (state, user) => {
       state.users.push(user)
+    },
+    addOrder: (state, order) => {
+      state.orders.push(order)
     }
   },
   actions: {

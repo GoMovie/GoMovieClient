@@ -16,6 +16,7 @@
           :router="true" ref="menu">
           <el-menu-item class="top-bar__item" v-for='item in items'
             :index="item.url" :key="item.url">{{ item.title }}</el-menu-item>
+          <el-menu-item class="top-bar__item" v-if="userInfo.isLogin" index="/orders">我的订单</el-menu-item>
         </el-menu>
       </el-col>
       <el-col :span="4">
