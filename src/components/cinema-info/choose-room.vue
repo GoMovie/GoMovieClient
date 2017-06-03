@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { getTimeStr } from '@/lib/util.js'
 
 export default {
   name: 'choose-room',
@@ -51,16 +52,7 @@ export default {
     }
   },
   methods: {
-    getTimeStr (timeStamp) {
-      let newDate = new Date()
-      newDate.setTime(timeStamp)
-      return newDate.toLocaleTimeString()
-    },
-    getDataStr () {
-      let newDate = new Date()
-      // newDate.setTime(timeStamp)
-      return newDate.toLocaleDateString()
-    },
+    getTimeStr,
     goSeatInfo: function (screeningId) {
       //  movieId, cinemaId, screenings
       let urlStr = `/seat-info?movieId=${this.movieId}&cinemaId=${this.cinemaId}&screeningId=${screeningId}`

@@ -1,0 +1,27 @@
+[
+  {
+    "user": {
+      "username": "hhk",
+      "password": "hhkb"
+    },
+    "movie": {
+      "id": 1578714,
+      "name": "神奇女侠",
+      "imageUrl": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p2460006593.jpg"
+    },
+    "cinema": {
+      "id": 1,
+      "name": "金逸珠江国际影城（大学城店）"
+    },
+    "screening": {
+      "id": 1,
+      "name": "巨幕影厅",
+      "startTime": 1470187800000,
+      "runningTime": 120
+    },
+    "seat": {
+      "row": 1,
+      "col": 1
+    }
+  }
+]

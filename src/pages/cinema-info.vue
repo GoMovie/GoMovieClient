@@ -3,7 +3,7 @@
     <el-row>
       <el-breadcrumb class="cinema-info__title">
         <el-breadcrumb-item to="/">首页</el-breadcrumb-item>
-        <el-breadcrumb-item :to="goBackPath">{{movieTitle}}</el-breadcrumb-item>
+        <el-breadcrumb-item :to="goBackPath">{{limitStrLen(movieTitle, 4)}}</el-breadcrumb-item>
         <el-breadcrumb-item>选择电影院</el-breadcrumb-item>
       </el-breadcrumb>
     </el-row>
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { limitStrLen } from '@/lib/util.js'
 
 export default {
   name: 'cinema-info',
@@ -60,11 +61,17 @@ export default {
     }
   },
   methods: {
+    limitStrLen,
     selectCinemaItem (index) {
       this.curSelectCinema = index
     }
   },
-  created: function () {
+  created: async function () {
+    // this.movieId = this.$route.query.movieId
+    // console.log('正在取电影详情')
+    // let {data} = await this.$http.get(`/movies/${this.movieId}/details`)
+    // this.movieDescription = data.summary
+    // console.log('取电影详情完毕')
     for (let item of this.$store.state.movies) {
       let movieId = this.$route.query.movieId
       if (Number(item.id) === Number(movieId)) {

@@ -18,9 +18,6 @@ export default [{
   path: '/seat-info',
   component: require('@/pages/seat-info')
 }, {
-  path: '/success',
-  component: require('@/pages/success')
-}, {
   path: '/trade-board',
   component: require('@/pages/trade-board')
 }]

@@ -28,6 +28,9 @@ export default new Vuex.Store({
       state.isMenuFocus = focus
     },
     buffMovieInfo: (state, buff) => {
+      for (let item of buff) {
+        item.imageUrl = item.imageUrl.replace(/spst/, 'lpst')
+      }
       state.movies = buff
     },
     login: (state, user) => {

@@ -4,10 +4,10 @@
       <el-breadcrumb class="seat-info__title">
         <el-breadcrumb-item to="/">首页</el-breadcrumb-item>
         <el-breadcrumb-item :to="pathToMovieInfo">
-          {{movieInfo.title}}
+          {{limitStrLen(movieInfo.title, 4)}}
         </el-breadcrumb-item>
         <el-breadcrumb-item :to="pathToCinemaInfo">
-          {{cinemaInfo.name}}
+          {{limitStrLen(cinemaInfo.name, 4)}}
         </el-breadcrumb-item>
         <el-breadcrumb-item>选择座位</el-breadcrumb-item>
       </el-breadcrumb>
@@ -37,7 +37,8 @@
           <div class="seat-info__order-info">场次：09:30:00</div>
           <div class="seat-info__order-info" v-if="!selectedSeat">座位：您还没有选择座位</div>
           <div class="seat-info__order-info" v-else>座位：{{selectedSeat.row + 1}}行{{selectedSeat.col + 1}}列</div>
-          <el-button class="seat-info__order-info" type="primary">确认选座</el-button>
+          <el-button class="seat-info__order-info" type="primary"
+            @click="onClickConfirm">确认选座</el-button>
         </div>
       </el-col>
     </el-row>
@@ -45,6 +46,7 @@
 </template>
 
 <script>
+import { limitStrLen } from '@/lib/util.js'
 //  TODO replaced by data from the server
 import seatData from '../components/seat-info/seat-buff'
 
@@ -73,6 +75,7 @@ export default {
     }
   },
   methods: {
+    limitStrLen,
     initSeatMap: function () {
       let {maxRow, maxCol} = seatData.reduce((max, item) => {
         return {
@@ -95,9 +98,7 @@ export default {
       }
     },
     onSeatClick: function (row, col) {
-      // console.log(`row=${row} col=${col}`)
       let seat = this.seats[row][col]
-      // console.log(seat)
       if (!seat.isEnable) {
         return
       }
@@ -106,6 +107,20 @@ export default {
       } else {
         this.selectedSeat = null
       }
+    },
+    onClickConfirm: function () {
+      if (this.selectedSeat === null) {
+        //  alert
+        this.$notify.error({
+          title: '错误',
+          message: '您还没有选择座位'
+        })
+        return
+      }
+      let {movieId, cinemaId, screeningId} = this.$route.query
+      let preInfo = `movieId=${movieId}&cinemaId=${cinemaId}&screeningId=${screeningId}`
+      let seatInfo = `row=${this.selectedSeat.row + 1}&col=${this.selectedSeat.col + 1}`
+      this.$router.push(`/confirm-order?${preInfo}&${seatInfo}`)
     }
   },
   created: function () {

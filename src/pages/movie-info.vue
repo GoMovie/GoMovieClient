@@ -3,7 +3,7 @@
     <el-row>
       <el-breadcrumb class="movie-info__title">
         <el-breadcrumb-item to="/">首页</el-breadcrumb-item>
-        <el-breadcrumb-item> {{movieInfo.title}} </el-breadcrumb-item>
+        <el-breadcrumb-item> {{limitStrLen(movieInfo.title, 4)}} </el-breadcrumb-item>
       </el-breadcrumb>
     </el-row>
     <div class="movie-info__up-part">
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import { limitStrLen } from '@/lib/util.js'
+
 export default {
   name: 'movie-info',
   data () {
@@ -35,6 +37,9 @@ export default {
   components: {
     'top-bar': require('../components/top-bar'),
     'basic-info': require('../components/movie-info/basic-info')
+  },
+  methods: {
+    limitStrLen
   },
   created: async function () {
     this.movieId = +this.$route.query.movieId

@@ -8,7 +8,7 @@
           <img :src="item.src" />
         </el-carousel-item>
       </el-carousel>
-    </div> 
+    </div>
     <el-row :gutter="20" class="fixed-row">
       <el-col :span="16">
         <home-posters></home-posters>
@@ -45,9 +45,7 @@ export default {
   },
   created: async function () {
     if (this.$store.state.movies.length > 0) return
-    console.log('正在取电影数据')
     await this.$store.dispatch('getMovieInfo')
-    console.log('取电影数据完毕')
   }
 }
 </script>
