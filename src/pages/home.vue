@@ -43,7 +43,7 @@ export default {
     'home-posters': require('../components/home/home-posters'),
     'home-rank': require('../components/home/home-rank')
   },
-  mounted: async function () {
+  created: async function () {
     if (this.$store.state.movies.length > 0) return
     console.log('正在取电影数据')
     await this.$store.dispatch('getMovieInfo')

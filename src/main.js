@@ -18,8 +18,8 @@ import router from './router'
 import config from './url-config'
 
 Vue.prototype.$http = axios
-// axios.defaults.baseURL = config.webServerURL
-axios.defaults.baseURL = config.testUrl
+axios.defaults.baseURL = config.webServerURL
+// axios.defaults.baseURL = config.testUrl
 
 Vue.config.productionTip = false
 
