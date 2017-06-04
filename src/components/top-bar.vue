@@ -11,7 +11,7 @@
           Go Movie
         </div>
       </el-col>
-      <el-col :span="16">
+      <el-col :span="15">
         <el-menu class="top-bar__menu" mode="horizontal" default-active="/"
           :router="true" ref="menu">
           <el-menu-item class="top-bar__item" v-for='item in items'
@@ -19,7 +19,7 @@
           <el-menu-item class="top-bar__item" v-if="userInfo.isLogin" index="/orders">我的订单</el-menu-item>
         </el-menu>
       </el-col>
-      <el-col :span="4">
+      <el-col :span="5">
         <div v-if="userInfo.isLogin" class="top-bar__greeting">你好，{{userInfo.username}}！</div>
         <el-button class="top-bar__login" type="text" size="large" @click="onLogin"
           v-if="!userInfo.isLogin">登录</el-button>

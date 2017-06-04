@@ -65,8 +65,8 @@ export default {
   font-size: 14px;
 }
 .confirm-item__divider {
-  position: absolute;
-  left: 670px;
+  margin-right: 200px;
+  float: right;
   overflow: hidden;
   background: url(http://static5.gewara.com/css/movie_wide/line_ticket.jpg) 0 0 no-repeat;
   width: 9px;

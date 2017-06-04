@@ -17,7 +17,6 @@
         <home-rank></home-rank>
       </el-col>
     </el-row>
-    <h1 class="test-text">{{ msg }}</h1>
   </div>
 </template>
 
@@ -26,7 +25,6 @@ export default {
   name: 'home',
   data () {
     return {
-      msg: 'Hello Vue, this is home page',
       carouselData: [{
         id: 1,
         src: 'http://p0.meituan.net/mmc/cebe963a68101c1fed923b120311625e140541.jpg'
@@ -50,7 +48,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 ul {
   list-style-type: none;

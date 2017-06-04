@@ -1,6 +1,7 @@
 <template>
   <div class="orders">
-    <confirm-item v-for="order in orders" :orderInfo="order" class="orders__item" :key="order.id"></confirm-item>
+    <confirm-item class="orders__item" v-for="order in orders" :orderInfo="order" :key="order.id">
+    </confirm-item>
   </div>
 </template>
 
@@ -22,13 +23,12 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .orders {
-  margin: 0 auto;
+  margin: 110px auto 0 auto;
 }
 
 .orders__item {
-  margin-bottom: 30px;
+  margin: 20px auto;
 }
 </style>

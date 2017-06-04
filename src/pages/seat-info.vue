@@ -37,8 +37,10 @@
           <div class="seat-info__order-info">场次：09:30:00</div>
           <div class="seat-info__order-info" v-if="!selectedSeat">座位：您还没有选择座位</div>
           <div class="seat-info__order-info" v-else>座位：{{selectedSeat.row + 1}}行{{selectedSeat.col + 1}}列</div>
-          <el-button class="seat-info__order-info" type="primary"
-            @click="onClickConfirm">确认选座</el-button>
+          <el-button class="seat-info__order-info" disabled
+            v-if="selectedSeat === null">您还未选座位</el-button>
+          <el-button class="seat-info__order-info" type="primary" @click="onClickConfirm"
+            v-else>确认选座</el-button>
         </div>
       </el-col>
     </el-row>
@@ -47,8 +49,6 @@
 
 <script>
 import { limitStrLen } from '@/lib/util.js'
-//  TODO replaced by data from the server
-import seatData from '../components/seat-info/seat-buff'
 
 export default {
   name: 'seat-info',
@@ -76,14 +76,13 @@ export default {
   },
   methods: {
     limitStrLen,
-    initSeatMap: function () {
-      let {maxRow, maxCol} = seatData.reduce((max, item) => {
+    initSeatMap: function (seatData) {
+      let { maxRow, maxCol } = seatData.reduce((max, item) => {
         return {
           maxRow: Math.max(max.maxRow, item.row),
           maxCol: Math.max(max.maxCol, item.col)
         }
       }, {maxRow: 0, maxCol: 0})
-      // console.log(maxRow, maxCol)
       this.seatRowNum = maxRow + 1
       this.seatColNum = maxCol + 1
       for (let i = 0; i <= maxRow; ++i) {
@@ -121,14 +120,20 @@ export default {
       let preInfo = `movieId=${movieId}&cinemaId=${cinemaId}&screeningId=${screeningId}`
       let seatInfo = `row=${this.selectedSeat.row + 1}&col=${this.selectedSeat.col + 1}`
       this.$router.push(`/confirm-order?${preInfo}&${seatInfo}`)
+    },
+    getSeatData: async function () {
+      let { cinemaId, screeningId } = this.$route.query
+      let hallId = this.$store.state.screenings.filter((screening) => +screeningId === screening.id)[0].hall.id
+      let { data } = await this.$http.get(`/cinemas/${cinemaId}/halls/${hallId}/seats`)
+      this.initSeatMap(data)
     }
   },
-  created: function () {
-    this.initSeatMap()
-    let {movieId, cinemaId, screeningId} = this.$route.query
+  created: async function () {
+    let { movieId, cinemaId, screeningId } = this.$route.query
     this.movieInfo = this.$store.state.movies.filter((movie) => +movieId === movie.id)[0]
     this.cinemaInfo = this.$store.state.cinemas.filter((cinema) => +cinemaId === cinema.id)[0]
     this.screeningInfo = this.$store.state.screenings.filter((screening) => +screeningId === screening.id)[0]
+    await this.getSeatData()
     this.containerStyle = {
       width: this.seatColNum * 35 + 'px'
     }

@@ -5,7 +5,7 @@ import axios from 'axios'
 // import config from '../url-config'
 import cinemas from './cinemas'
 import screenings from './screenings'
-import orders from './orders'
+// import orders from './orders'
 
 Vue.use(Vuex)
 
@@ -14,11 +14,14 @@ const debug = process.env.NODE_ENV !== 'production'
 export default new Vuex.Store({
   strict: debug,
   state: {
-    users: [],
+    users: [{
+      username: 'hhk',
+      password: '123456'
+    }],
     movies: [],
     cinemas,
     screenings,
-    orders,
+    orders: [],
     userInfo: {
       username: '',
       password: '',

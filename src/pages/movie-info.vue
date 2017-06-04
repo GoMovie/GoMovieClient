@@ -43,10 +43,8 @@ export default {
   },
   created: async function () {
     this.movieId = +this.$route.query.movieId
-    console.log('正在取电影详情')
     let {data} = await this.$http.get(`/movies/${this.movieId}/details`)
     this.movieDescription = data.summary
-    console.log('取电影详情完毕')
   }
 }
 </script>
@@ -57,7 +55,7 @@ export default {
 }
 
 .movie-info__bottom-part {
-  margin-bottom: 30px;  
+  margin-bottom: 30px;
 }
 
 .movie-info {
